@@ -38,7 +38,7 @@ export const LogoLink = styled(NavLink)`
   ${tw`flex items-center font-black border-b-0 text-2xl! ml-0!`};
 
   img {
-    ${tw`w-10 mr-3`}
+    ${tw`w-16 mr-3`}
   }
 `;
 
@@ -109,7 +109,6 @@ export default ({
   const defaultLogoLink = (
     <LogoLink href="/">
       <img src={logo} alt="logo" />
-      ChainChaser
     </LogoLink>
   );
 
@@ -118,12 +117,12 @@ export default ({
 
   return (
     <Header className={className || "header-light"}>
-      <DesktopNavLinks css={collapseBreakpointCss.desktopNavLinks}>
+      {/* <DesktopNavLinks css={collapseBreakpointCss.desktopNavLinks}> */}
         {logoLink}
         {links}
-      </DesktopNavLinks>
+      {/* </DesktopNavLinks> */}
 
-      <MobileNavLinksContainer
+      {/* <MobileNavLinksContainer
         css={collapseBreakpointCss.mobileNavLinksContainer}
       >
         {logoLink}
@@ -144,7 +143,7 @@ export default ({
             <MenuIcon tw="w-6 h-6" />
           )}
         </NavToggle>
-      </MobileNavLinksContainer>
+      </MobileNavLinksContainer> */}
     </Header>
   );
 };
