@@ -7,7 +7,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
-import logo from "../../images/chainchaser/logo2.svg";
+import logo from "../../images/chainchaser/logo.svg";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 
