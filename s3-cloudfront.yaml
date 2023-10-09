@@ -1,0 +1,97 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: "Static contents distribution using S3 and CloudFront."
+
+Parameters:
+  pjName:
+    Type: String
+    Default: "mtcFrontend"
+
+Resources:
+  OriginBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  # S3 bucket policy to allow access from CloudFront OAI
+  S3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref OriginBucket
+      PolicyDocument:
+        Statement:
+          - Action: s3:GetObject
+            Effect: Allow
+            Resource: !Sub arn:aws:s3:::${OriginBucket}/*
+            Principal:
+              AWS: !Sub arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${CloudFrontOriginAccessIdentity}
+
+  S3CachePolicy:
+    Type: AWS::CloudFront::CachePolicy
+    Properties:
+      CachePolicyConfig:
+        DefaultTTL: 3600
+        MaxTTL: 86400
+        MinTTL: 0
+        Name: !Sub "${pjName}-cache-policy"
+        ParametersInCacheKeyAndForwardedToOrigin:
+          EnableAcceptEncodingGzip: true
+          CookiesConfig:
+            CookieBehavior: none
+          HeadersConfig:
+            HeaderBehavior: none
+          QueryStringsConfig:
+            QueryStringBehavior: none
+
+  S3RequestPolicy:
+    Type: AWS::CloudFront::OriginRequestPolicy
+    Properties:
+      OriginRequestPolicyConfig:
+        Name: !Sub "${pjName}-request-policy"
+        CookiesConfig:
+          CookieBehavior: none
+        HeadersConfig:
+          HeaderBehavior: none
+        QueryStringsConfig:
+          QueryStringBehavior: none
+
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Comment: !Sub "${pjName} CloudFront"
+        Enabled: true
+        HttpVersion: "http1.1"
+        DefaultRootObject: "/"
+        IPV6Enabled: true
+        PriceClass: "PriceClass_200"
+        DefaultCacheBehavior:
+          TargetOriginId: !Ref OriginBucket
+          AllowedMethods: [HEAD, GET]
+          CachedMethods: [HEAD, GET]
+          CachePolicyId: !Ref S3CachePolicy
+          OriginRequestPolicyId: !Ref S3RequestPolicy
+          Compress: true
+          ViewerProtocolPolicy: "allow-all"
+        CacheBehaviors: []
+        Origins:
+          - DomainName: !GetAtt OriginBucket.DomainName
+            Id: !Ref OriginBucket
+            S3OriginConfig:
+              OriginAccessIdentity: !Join
+                - ""
+                - - "origin-access-identity/cloudfront/"
+                  - !Ref CloudFrontOriginAccessIdentity
+        CustomErrorResponses:
+          - ErrorCode: 403
+            ResponseCode: 200
+            ResponsePagePath: "/index.html"
+            ErrorCachingMinTTL: 180
+
+  CloudFrontOriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: !Sub "${pjName} React request identity."
