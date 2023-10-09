@@ -1,4 +1,5 @@
 import React from "react";
+import { Element } from "react-scroll";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
@@ -179,12 +180,15 @@ export default () => {
           },
         ]}
       />
-      <ThreeColumnDashedBorderFeatures />
+      <Element name="contact-form" className="element">
+        <ThreeColumnDashedBorderFeatures />
+      </Element>
       <TwoColContactUsWithIllustrationFullForm
         subheading=""
         heading=""
         description=""
       />
+
       <GetStarted
         text={
           <>
