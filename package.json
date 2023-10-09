@@ -1,6 +1,6 @@
 {
-  "name": "treact",
-  "version": "0.1.0",
+  "name": "chainchaser_lp",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.0",
@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && netlify deploy --prod --dir=build"
+    "deploy": "yarn build && aws s3 sync build/ s3://lp-dev-originbucket-qj4d2j2bcue4 --profile lp-dev && aws --profile lp-dev cloudfront create-invalidation --distribution-id EN84RL6FCA9HQ --paths '/*'"
   },
   "eslintConfig": {
     "extends": "react-app",
