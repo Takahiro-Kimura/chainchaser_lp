@@ -19,7 +19,7 @@ import TwoColContactUsWithIllustrationFullForm from "components/forms/TwoColCont
 import Footer from "components/footers/MiniCenteredFooter.js";
 import heroScreenshotImageSrc from "images/hero-screenshot-1.png";
 import macHeroScreenshotImageSrc from "images/hero-screenshot-2.png";
-import prototypeIllustrationImageSrc from "images/prototype-illustration.svg";
+import cryptoImageSrc from "images/chainchaser/crypto_image2.jpg";
 import { ReactComponent as EthIcon } from "../images/crypto/eth.svg";
 import { ReactComponent as MaticIcon } from "../images/crypto/matic.svg";
 
@@ -93,7 +93,7 @@ export default () => {
             <HighlightedText>4つのチェーン</HighlightedText>に対応
           </>
         }
-        imageSrc={prototypeIllustrationImageSrc}
+        imageSrc={cryptoImageSrc}
         showDecoratorBlob={false}
         description="対応チェーンは順次拡大予定"
         features={[
