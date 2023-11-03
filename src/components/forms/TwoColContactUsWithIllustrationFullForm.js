@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -13,9 +13,7 @@ const Container = tw.div`md:mx-auto`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
 const Column = tw.div`w-full`;
 const ImageColumn = tw(Column)`md:w-5/12 flex-shrink-0 h-80 md:h-auto`;
-const TextColumn = styled(Column)((props) => [
-  tw`md:w-7/12 md:mx-auto`
-]);
+const TextColumn = styled(Column)((props) => [tw`md:w-7/12 md:mx-auto`]);
 
 const Image = styled.div((props) => [
   `background-image: url("${props.imageSrc}");`,
@@ -47,11 +45,41 @@ export default ({
   ),
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   submitButtonText = "送信",
-  formAction = "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdnDaC1CnuhkuMqP1z5xaw-BGK4ZZp3SMCrAlQS7Dcz7O5zhw/formResponse",
+  formAction = "",
   formMethod = "POST",
   textOnLeft = false,
 }) => {
-  // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [content, setContent] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // フォームのデフォルトの動作を無効化する
+    console.log("入力された値:", email, name, company, content);
+
+    fetch(formAction, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "no-cors",
+      body: JSON.stringify({
+        email,
+        name,
+        company,
+        content,
+      }),
+    }).then(
+      (response) => {
+        console.log("response", response);
+      },
+      (e) => {
+        // エラー内容
+        console.error("ERROR:", e);
+      }
+    );
+  };
 
   return (
     <Container>
@@ -67,33 +95,51 @@ export default ({
           <Form
             action={formAction}
             method={formMethod}
-            target="hidden_iframe"
-            onsubmit="submitted=true;"
+            // target="hidden_iframe"
+            // onsubmit="submitted=true;"
           >
             <Input
               type="email"
-              name="entry.1831130227"
+              name="email"
+              value={email}
               placeholder="メールアドレス"
               required
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
             <Input
               type="text"
-              name="entry.1136785483"
+              name="name"
+              value={name}
               placeholder="氏名"
               required
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
             />
             <Input
               type="text"
-              name="entry.1808480512"
+              name="company"
+              value={company}
               placeholder="会社・団体名"
               required
+              onChange={(e) => {
+                setCompany(e.target.value);
+              }}
             />
             <Textarea
-              name="entry.664429522"
+              name="content"
+              value={content}
               placeholder="お問い合わせ内容"
               required
+              onChange={(e) => {
+                setContent(e.target.value);
+              }}
             />
-            <SubmitButton type="submit">{submitButtonText}</SubmitButton>
+            <SubmitButton onClick={handleSubmit}>
+              {submitButtonText}
+            </SubmitButton>
           </Form>
         </TextContent>
       </TextColumn>
