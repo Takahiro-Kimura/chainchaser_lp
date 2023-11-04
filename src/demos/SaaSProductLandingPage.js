@@ -187,7 +187,7 @@ export default () => {
         subheading=""
         heading=""
         description=""
-        formAction="https://script.google.com/macros/s/AKfycbzpe7XJATi6HvMhBMtwoI411ku5zco1d68yqqlWtRypngkPHD0Icgg0m49_CTK5rqvBhQ/exec"
+        formAction="https://script.google.com/macros/s/AKfycbxzBaHy9_mfWsi0XPtcpZFlHkSdZw1MqMUX7Ppg7g6V8k0pKxDCJy0UY9f2O-Zbq_oyBA/exec"
       />
 
       <GetStarted
