@@ -22,6 +22,7 @@ import macHeroScreenshotImageSrc from "images/hero-screenshot-2.png";
 import cryptoImageSrc from "images/chainchaser/crypto_image2.jpg";
 import { ReactComponent as EthIcon } from "../images/crypto/eth.svg";
 import { ReactComponent as MaticIcon } from "../images/crypto/matic.svg";
+import { ReactComponent as AstarIcon } from "../images/crypto/astar.svg";
 
 export default () => {
   const Subheading = tw.span`uppercase tracking-widest font-bold text-primary-500`;
@@ -90,7 +91,7 @@ export default () => {
         subheading={<Subheading>Supported Chains</Subheading>}
         heading={
           <>
-            <HighlightedText>4つのチェーン</HighlightedText>に対応
+            <HighlightedText>3つのチェーン</HighlightedText>に対応
           </>
         }
         imageSrc={cryptoImageSrc}
@@ -105,6 +106,11 @@ export default () => {
           {
             Icon: MaticIcon,
             title: "Polygon",
+            description: "",
+          },
+          {
+            Icon: AstarIcon,
+            title: "Astar",
             description: "",
           },
         ]}
