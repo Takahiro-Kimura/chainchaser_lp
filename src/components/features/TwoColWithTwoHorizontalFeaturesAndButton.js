@@ -146,13 +146,13 @@ export default ({
               ))}
             </Features>
 
-            <PrimaryButton
+            {/* <PrimaryButton
               buttonRounded={buttonRounded}
               as="a"
               href={primaryButtonUrl}
             >
               {primaryButtonText}
-            </PrimaryButton>
+            </PrimaryButton> */}
           </TextContent>
         </TextColumn>
       </TwoColumn>

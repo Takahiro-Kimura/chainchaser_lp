@@ -71,7 +71,7 @@ export default () => {
     {
       imageSrc: ShieldIconImage,
       title: "ご利用料金",
-      description: "お客様の運用中のアドレス数などに合わせご案内いたします"
+      description: "お客様の運用中のアドレス数やプロジェクト数などに合わせご案内いたします"
     },
     { imageSrc: CustomizeIconImage, title: "無料トライアル", description: "15日間の無料トライアルで実際の機能をお試しいただけます" },
   ];
