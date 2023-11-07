@@ -18,6 +18,7 @@ import TwoColContactUsWithIllustrationFullForm from "components/forms/TwoColCont
 // import Footer from "components/footers/FiveColumnWithBackground.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
 import heroScreenshotImageSrc from "images/hero-screenshot-1.png";
+import freeeIntegrationImageSrc from "images/chainchaser/freeeIntegration.png";
 import macHeroScreenshotImageSrc from "images/hero-screenshot-2.png";
 import cryptoImageSrc from "images/chainchaser/crypto_image2.jpg";
 import { ReactComponent as EthIcon } from "../images/crypto/eth.svg";
@@ -58,8 +59,13 @@ export default () => {
             <HighlightedText>ワンクリック</HighlightedText>で外部サービスに連携
           </>
         }
-        description="ChainChaser 上のデータをワンクリックで freee に登録可能"
-        imageSrc={heroScreenshotImageSrc}
+        description={
+          <>
+            <div>ChainChaser 上のデータをワンクリックで freee に登録可能</div>
+            <div>連携先は順次拡大予定</div>
+          </>
+        }
+        imageSrc={freeeIntegrationImageSrc}
         imageBorder={true}
         imageDecoratorBlob={true}
       />
