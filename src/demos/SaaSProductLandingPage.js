@@ -210,7 +210,7 @@ export default () => {
           </>
         }
         primaryLinkText="日程を確認"
-        primaryLinkUrl="http://timerse.com"
+        primaryLinkUrl="https://timerex.net/s/kimura.takahiro_a0be_0f32/8c3b4aca"
         secondaryLinkText={false}
         secondaryLinkUrl=""
       />
