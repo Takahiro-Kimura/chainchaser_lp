@@ -66,14 +66,19 @@ export default () => {
     {
       imageSrc: ShieldIconImage,
       title: "詳細機能",
-      description: "機能の詳細やカスタマイズなどご不明点にお答えいたします"
+      description: "機能の詳細やカスタマイズなどご不明点にお答えいたします",
     },
     {
       imageSrc: ShieldIconImage,
       title: "ご利用料金",
-      description: "お客様の運用中のアドレス数やプロジェクト数などに合わせご案内いたします"
+      description:
+        "お客様の運用中のアドレス数やプロジェクト数などに合わせご案内いたします",
     },
-    { imageSrc: CustomizeIconImage, title: "無料トライアル", description: "15日間の無料トライアルで実際の機能をお試しいただけます" },
+    {
+      imageSrc: CustomizeIconImage,
+      title: "無料トライアル",
+      description: "15日間の無料トライアルで実際の機能をお試しいただけます",
+    },
   ];
 
   return (
@@ -88,9 +93,7 @@ export default () => {
               </span> */}
               <span className="textContainer">
                 <span className="title">{card.title || "Fully Secure"}</span>
-                <p className="description">
-                  {card.description || "説明"}
-                </p>
+                <p className="description">{card.description || "説明"}</p>
               </span>
             </Card>
           </Column>
