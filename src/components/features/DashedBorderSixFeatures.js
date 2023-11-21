@@ -84,7 +84,8 @@ export default () => {
   return (
     <Container>
       <ThreeColumnContainer>
-        <Heading>お気軽にお問い合わせください</Heading>
+        <Heading id="contact">お気軽にお問い合わせください</Heading>
+
         {cards.map((card, i) => (
           <Column key={i}>
             <Card>

@@ -191,9 +191,7 @@ export default () => {
           },
         ]}
       />
-      <section id='contact'>
-        <ThreeColumnDashedBorderFeatures />
-      </section>
+      <ThreeColumnDashedBorderFeatures />
       <TwoColContactUsWithIllustrationFullForm
         subheading=""
         heading=""
