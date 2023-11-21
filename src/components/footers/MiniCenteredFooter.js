@@ -37,13 +37,13 @@ export default () => {
             <LogoImg src={logo} />
             <LogoText>ChainChaser</LogoText>
           </LogoContainer>
-          {/* <LinksContainer>
-            <Link href="#">Home</Link>
-            <Link href="#">About</Link>
+          <LinksContainer>
+            <Link href="/company">運営会社</Link>
+            {/* <Link href="#">About</Link>
             <Link href="#">Contact Us</Link>
             <Link href="#">Blog</Link>
-            <Link href="#">Reviews</Link>
-          </LinksContainer> */}
+            <Link href="#">Reviews</Link> */}
+          </LinksContainer>
           {/* <SocialLinksContainer>
             <SocialLink href="https://facebook.com">
               <FacebookIcon />

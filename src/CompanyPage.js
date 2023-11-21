@@ -40,17 +40,19 @@ export default () => {
   return (
     <AnimationRevealPage disabled>
       <Header links={[]} />
-      <div style={{ margin: "0 auto", width: "60%" }}>
+      <div style={{ margin: "0 auto", maxWidth: "500px" }}>
         <Subheading>COMPANY</Subheading>
         <Heading>会社概要</Heading>
         {data.map((item) => {
           return (
             <Row>
               <Divider />
-              <Col xs={24} sm={8}>
+              <Col xs={1} sm={1}></Col>
+              <Col xs={23} sm={6}>
                 <div>{item.name}</div>
               </Col>
-              <Col xs={24} sm={16}>
+              <Col xs={1} sm={1}></Col>
+              <Col xs={23} sm={16}>
                 <div>{item.value}</div>
               </Col>
             </Row>
