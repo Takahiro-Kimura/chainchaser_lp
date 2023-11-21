@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-scroll";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -86,19 +86,11 @@ export default ({
       <NavLink href="/#" tw="lg:ml-12!">
         Login
       </NavLink> */}
-      <Link
-        activeClass="active"
-        to="contact-form"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        //onSetActive={handleSetActive}
-      >
+      <AnchorLink href="#contact">
         <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/#">
           お問い合わせ
         </PrimaryLink>
-      </Link>
+      </AnchorLink>
     </NavLinks>,
   ];
 
@@ -118,8 +110,8 @@ export default ({
   return (
     <Header className={className || "header-light"}>
       {/* <DesktopNavLinks css={collapseBreakpointCss.desktopNavLinks}> */}
-        {logoLink}
-        {links}
+      {logoLink}
+      {links}
       {/* </DesktopNavLinks> */}
 
       {/* <MobileNavLinksContainer
