@@ -60,10 +60,10 @@ export default ({ roundedHeaderButton }) => {
             <Paragraph>
               ブロックチェーン上のデータを自動で収集して、日本円に換算し集計などを計算します。
             </Paragraph>
-            <Actions>
+            {/* <Actions>
               <input type="text" placeholder="Your E-mail Address" />
               <button>Get Started</button>
-            </Actions>
+            </Actions> */}
             {/* <CustomersLogoStrip>
               <p>ご利用企業</p>
               <img src={CustomersLogoStripImage} alt="Our Customers" />
