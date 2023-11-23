@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
+import { notification } from 'antd';
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {
   SectionHeading,
@@ -58,6 +59,23 @@ export default ({
     e.preventDefault(); // フォームのデフォルトの動作を無効化する
     console.log("入力された値:", email, name, company, content);
 
+    if (email === "") {
+      notification.warning({
+        placement: 'top',
+        duration: 7,
+        message: "メールアドレスを入力してください",
+      })
+      return;
+    }
+    if (content === "") {
+      notification.warning({
+        placement: 'top',
+        duration: 7,
+        message: "お問い合せ内容を入力してください",
+      })
+      return;
+    }
+
     fetch(formAction, {
       method: "POST",
       headers: {
@@ -73,10 +91,22 @@ export default ({
     }).then(
       (response) => {
         console.log("response", response);
+        notification.success({
+          placement: 'top',
+          duration: 10,
+          message: "送信が完了しました",
+          description: "お問い合わせありがとうございます！お問い合わせ内容を確認しご連絡いたしますので、しばらくお待ちください。"
+        })
       },
       (e) => {
         // エラー内容
         console.error("ERROR:", e);
+        notification.error({
+          placement: 'top',
+          duration: 10,
+          message: "送信に失敗しました",
+          description: "お手数をおかけしますが、時間をおいて再度送信をお願いいたします。"
+        })
       }
     );
   };
