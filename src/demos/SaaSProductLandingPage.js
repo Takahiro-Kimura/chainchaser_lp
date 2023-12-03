@@ -16,9 +16,8 @@ import GetStarted from "components/cta/GetStarted";
 import TwoColContactUsWithIllustrationFullForm from "components/forms/TwoColContactUsWithIllustrationFullForm";
 // import Footer from "components/footers/FiveColumnWithBackground.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
-import heroScreenshotImageSrc from "images/hero-screenshot-1.png";
 import freeeIntegrationImageSrc from "images/chainchaser/freeeIntegration.png";
-import macHeroScreenshotImageSrc from "images/hero-screenshot-2.png";
+import walletRegistrationImageSrc from "images/chainchaser/wallet_registration.svg"
 import cryptoImageSrc from "images/chainchaser/crypto_image2.jpg";
 import { ReactComponent as EthIcon } from "../images/crypto/eth.svg";
 import { ReactComponent as MaticIcon } from "../images/crypto/matic.svg";
@@ -76,7 +75,7 @@ export default () => {
           </>
         }
         textOnLeft={false}
-        imageSrc={macHeroScreenshotImageSrc}
+        imageSrc={walletRegistrationImageSrc}
         imageDecoratorBlob={true}
         decoratorBlobCss={tw`xl:w-40 xl:h-40 opacity-15 -translate-x-1/2 left-1/2`}
         steps={[
