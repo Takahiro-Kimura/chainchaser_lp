@@ -67,6 +67,7 @@ export default () => {
         imageSrc={freeeIntegrationImageSrc}
         imageBorder={true}
         imageDecoratorBlob={true}
+        primaryButtonUrl="https://app.secure.freee.co.jp/applications/26799"
       />
       <FeatureWithSteps
         subheading={<Subheading>Onboarding</Subheading>}
