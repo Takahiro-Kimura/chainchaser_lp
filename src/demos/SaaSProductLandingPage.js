@@ -19,6 +19,7 @@ import Footer from "components/footers/MiniCenteredFooter.js";
 import freeeIntegrationImageSrc from "images/chainchaser/freeeIntegration.png";
 import walletRegistrationImageSrc from "images/chainchaser/wallet_registration.svg"
 import cryptoImageSrc from "images/chainchaser/crypto_image2.jpg";
+import sasakiSanSrc from "images/chainchaser/sasaki_daisuke.jpg";
 import { ReactComponent as EthIcon } from "../images/crypto/eth.svg";
 import { ReactComponent as MaticIcon } from "../images/crypto/matic.svg";
 import { ReactComponent as AstarIcon } from "../images/crypto/astar.svg";
@@ -158,9 +159,8 @@ export default () => {
         testimonials={[
           {
             customerName: "Tales & Tokens, Inc.",
-            customerProfile: "代表取締役 sasakill様",
-            imageSrc:
-              "https://pbs.twimg.com/profile_images/1532016384175067143/MkI6AISS_400x400.jpg",
+            customerProfile: "代表取締役 佐々木大輔様",
+            imageSrc: sasakiSanSrc,
             quote:
               "法人のウォレットの中に入ってくる売上も  WETH や MATIC として入ってきています。その WETH、MATIC、ETH がその時点で日本円でいくらなのかがパッとわからないわけですよね。毎月の計上は別途やらないといけないので ChainChaser がないとまず不可能。",
           },
