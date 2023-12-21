@@ -108,12 +108,12 @@ export default ({
                   </CustomerProfile>
                 </CustomerNameAndProfileContainer>
                 <ControlsContainer>
-                  <ControlButton onClick={sliderRef?.slickPrev}>
+                  {/* <ControlButton onClick={sliderRef?.slickPrev}>
                     <ArrowLeftIcon className="icon" />
                   </ControlButton>
                   <ControlButton>
                     <ArrowRightIcon className="icon" onClick={sliderRef?.slickNext}/>
-                  </ControlButton>
+                  </ControlButton> */}
                 </ControlsContainer>
               </CustomerInfoAndControlsContainer>
             </Testimonial>
