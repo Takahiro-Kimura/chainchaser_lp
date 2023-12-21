@@ -26,9 +26,7 @@ export default ({
   text = "Developers all over the world are happily using Treact.",
   primaryLinkText = "Get Started",
   primaryLinkUrl = "http://timerse.com",
-  secondaryLinkText = "Contact Us",
-  secondaryLinkUrl = "http://google.com",
-  pushDownFooter = true
+  pushDownFooter = false
 }) => {
   return (
     <Container css={pushDownFooter && tw`mb-20 lg:mb-24`}>
@@ -40,7 +38,6 @@ export default ({
           </TextContainer>
           <LinksContainer>
             <PrimaryLink href={primaryLinkUrl}>{primaryLinkText}</PrimaryLink>
-            <SecondaryLink href={secondaryLinkUrl}>{secondaryLinkText}</SecondaryLink>
           </LinksContainer>
         </Row>
         <DecoratorBlobContainer>

@@ -20,9 +20,9 @@ const data = [
     name: "事業内容",
     value: (
       <>
-        ChainChaser の企画・開発・運営・販売
+        ChainChaser の運営
         <br />
-        Web3プロジェクト事業開発支援
+        ブロックチェーン関連サービスの受託開発及びコンサルティング業務
       </>
     ),
   },
@@ -40,17 +40,19 @@ export default () => {
   return (
     <AnimationRevealPage disabled>
       <Header links={[]} />
-      <div style={{ margin: "0 auto", width: "60%" }}>
+      <div style={{ margin: "0 auto", maxWidth: "700px" }}>
         <Subheading>COMPANY</Subheading>
         <Heading>会社概要</Heading>
         {data.map((item) => {
           return (
             <Row>
               <Divider />
-              <Col xs={24} sm={8}>
+              <Col xs={1} sm={1}></Col>
+              <Col xs={23} sm={6}>
                 <div>{item.name}</div>
               </Col>
-              <Col xs={24} sm={16}>
+              <Col xs={1} sm={1}></Col>
+              <Col xs={23} sm={16}>
                 <div>{item.value}</div>
               </Col>
             </Row>

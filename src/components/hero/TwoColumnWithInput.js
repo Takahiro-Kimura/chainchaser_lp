@@ -9,6 +9,7 @@ import Header from "../headers/light.js";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
 import DesignIllustration from "../../images/design-illustration-2.svg";
 import CustomersLogoStripImage from "../../images/customers-logo-strip.png";
+import ChainChaserDashboard from "../../images/chainchaser/hero.png";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -53,24 +54,32 @@ export default ({ roundedHeaderButton }) => {
         <TwoColumn>
           <LeftColumn>
             <Heading>
-              Beautiful React Templates <span tw="text-primary-500">for you.</span>
+              <span style={{ wordBreak: "keep-all" }}>
+                NFTの売上を
+                <wbr />
+                <span tw="text-primary-500">楽々チェック</span>
+              </span>
             </Heading>
             <Paragraph>
-              Our templates are easy to setup, understand and customize. Fully modular components with a variety of
-              pages and components.
+              自動で NFT コレクションごとの売上や Gas
+              代などを日本円に変換し集計します。ウォレットとコントラクトを登録するだけで簡単に利用開始できます。
             </Paragraph>
-            <Actions>
+            {/* <Actions>
               <input type="text" placeholder="Your E-mail Address" />
               <button>Get Started</button>
-            </Actions>
-            <CustomersLogoStrip>
-              <p>Our TRUSTED Customers</p>
+            </Actions> */}
+            {/* <CustomersLogoStrip>
+              <p>ご利用企業</p>
               <img src={CustomersLogoStripImage} alt="Our Customers" />
-            </CustomersLogoStrip>
+            </CustomersLogoStrip> */}
           </LeftColumn>
           <RightColumn>
             <IllustrationContainer>
-              <img tw="min-w-0 w-full max-w-lg xl:max-w-3xl" src={DesignIllustration} alt="Design Illustration" />
+              <img
+                tw="min-w-0 w-full max-w-lg xl:max-w-3xl"
+                src={ChainChaserDashboard}
+                alt="Design Illustration"
+              />
             </IllustrationContainer>
           </RightColumn>
         </TwoColumn>

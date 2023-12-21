@@ -19,7 +19,7 @@ import SimpleIconImage from "../../images/simple-icon.svg";
 const Container = tw.div`relative`;
 
 const ThreeColumnContainer = styled.div`
-  ${tw`flex flex-col items-center md:items-stretch md:flex-row flex-wrap md:justify-center max-w-screen-xl mx-auto py-20 md:py-24`}
+  ${tw`flex flex-col items-center md:items-stretch md:flex-row flex-wrap md:justify-center max-w-screen-xl mx-auto`}
 `;
 const Heading = tw(SectionHeading)`w-full`;
 
@@ -28,7 +28,7 @@ const Column = styled.div`
 `;
 
 const Card = styled.div`
-  ${tw`flex flex-col mx-auto max-w-xs items-center px-6 py-10 border-2 border-dashed border-primary-500 rounded-lg mt-12`}
+  ${tw`flex flex-col mx-auto max-w-xs items-center px-6 border-2 border-dashed border-primary-500 rounded-lg mt-12`}
   .imageContainer {
     ${tw`border-2 border-primary-500 text-center rounded-full p-6 flex-shrink-0 relative`}
     img {
@@ -65,37 +65,42 @@ export default () => {
   const cards = [
     {
       imageSrc: ShieldIconImage,
-      title: "Ads Management",
-      description: "We create and manage ads that you need, from creation to deployment. Lorem ipsum donor sit amet consicou."
+      title: "詳細機能",
+      description: "機能の詳細やカスタマイズなどご不明点にお答えいたします",
     },
-    { imageSrc: SupportIconImage, title: "Video Marketing" },
-    { imageSrc: CustomizeIconImage, title: "Customer Relation" },
-    { imageSrc: ReliableIconImage, title: "Product Outreach" },
-    { imageSrc: FastIconImage, title: "PR Campaign" },
-    { imageSrc: SimpleIconImage, title: "Product Expansion" }
+    {
+      imageSrc: ShieldIconImage,
+      title: "ご利用料金",
+      description:
+        "お客様の運用中のアドレス数やプロジェクト数などに合わせご案内いたします",
+    },
+    {
+      imageSrc: CustomizeIconImage,
+      title: "無料トライアル",
+      description: "15日間の無料トライアルで実際の機能をお試しいただけます",
+    },
   ];
 
   return (
     <Container>
       <ThreeColumnContainer>
-        <Heading>Our Professional <span tw="text-primary-500">Services</span></Heading>
+        <Heading id="contact">お気軽にお問い合わせください</Heading>
+
         {cards.map((card, i) => (
           <Column key={i}>
             <Card>
-              <span className="imageContainer">
+              {/* <span className="imageContainer">
                 <img src={card.imageSrc || defaultCardImage} alt="" />
-              </span>
+              </span> */}
               <span className="textContainer">
                 <span className="title">{card.title || "Fully Secure"}</span>
-                <p className="description">
-                  {card.description || "Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud. Sic Semper Tyrannis. Neoas Calie artel."}
-                </p>
+                <p className="description">{card.description || "説明"}</p>
               </span>
             </Card>
           </Column>
         ))}
       </ThreeColumnContainer>
-      <DecoratorBlob />
+      {/* <DecoratorBlob /> */}
     </Container>
   );
 };

@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
+    "antd": "^5.11.0",
     "feather-icons": "^4.29.0",
     "framer-motion": "^7.3.2",
     "react": "^18.0.0",
@@ -27,7 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && aws s3 sync build/ s3://lp-dev-originbucket-qj4d2j2bcue4 --profile lp-dev && aws --profile lp-dev cloudfront create-invalidation --distribution-id EN84RL6FCA9HQ --paths '/*'"
+    "deploy": "yarn build && aws s3 sync build/ s3://lp-dev-originbucket-qj4d2j2bcue4 --profile lp && aws --profile lp cloudfront create-invalidation --distribution-id EN84RL6FCA9HQ --paths '/*'",
+    "deploy:prod": "yarn build && aws s3 sync build/ s3://lp-prod-originbucket-7pxpfvo0q1o2 --profile lp && aws --profile lp cloudfront create-invalidation --distribution-id EN6CK2R2NCEQB --paths '/*'"
   },
   "eslintConfig": {
     "extends": "react-app",
