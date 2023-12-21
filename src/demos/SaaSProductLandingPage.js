@@ -17,7 +17,7 @@ import TwoColContactUsWithIllustrationFullForm from "components/forms/TwoColCont
 // import Footer from "components/footers/FiveColumnWithBackground.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
 import freeeIntegrationImageSrc from "images/chainchaser/freeeIntegration.png";
-import walletRegistrationImageSrc from "images/chainchaser/wallet_registration.svg"
+import walletRegistrationImageSrc from "images/chainchaser/wallet_registration.svg";
 import cryptoImageSrc from "images/chainchaser/crypto_image2.jpg";
 import sasakiSanSrc from "images/chainchaser/sasaki_daisuke.jpg";
 import { ReactComponent as EthIcon } from "../images/crypto/eth.svg";
@@ -34,12 +34,24 @@ export default () => {
       <Hero roundedHeaderButton={true} />
       {/* 2段目 */}
       <Issue
-        heading="エクセルで計算、してませんか？"
-        description="ブロックチェーンで未来を語る一方で、裏側の業務処理が未だにエクセルなことを残念に思いませんか？"
+        heading={
+          <span style={{ wordBreak: "keep-all" }}>
+            エクセルで売上計算、
+            <wbr />
+            してませんか？
+          </span>
+        }
+        description={
+          <span style={{ wordBreak: "keep-all" }}>
+            ブロックチェーンエンジニアの貴重な時間を
+            <wbr />
+            集計作業に使っていませんか？
+          </span>
+        }
         stats={[]}
       />
       <Issue
-        heading="全部自動化して、エクセルから解放します"
+        heading="全部自動化してエクセルから解放します"
         description=""
         stats={[]}
       />
@@ -55,7 +67,8 @@ export default () => {
         subheading={<Subheading>Service Integration</Subheading>}
         heading={
           <>
-            <HighlightedText>ワンクリック</HighlightedText>で外部サービスに連携
+            <HighlightedText>ワンクリック</HighlightedText>で<br />
+            外部サービスに連携
           </>
         }
         description={
@@ -70,11 +83,12 @@ export default () => {
         primaryButtonUrl="https://app.secure.freee.co.jp/applications/26799"
       />
       <FeatureWithSteps
-        subheading={<Subheading>Onboarding</Subheading>}
+        subheading={<Subheading>Getting started</Subheading>}
         heading={
-          <>
-            <HighlightedText>簡単設定</HighlightedText>ですぐに利用可能
-          </>
+          <span style={{ wordBreak: "keep-all" }}>
+            <HighlightedText>簡単設定</HighlightedText>で<wbr />
+            すぐに利用可能
+          </span>
         }
         textOnLeft={false}
         imageSrc={walletRegistrationImageSrc}
@@ -163,7 +177,7 @@ export default () => {
             customerProfile: "代表取締役 佐々木大輔様",
             imageSrc: sasakiSanSrc,
             quote:
-              "法人のウォレットの中に入ってくる売上も  WETH や MATIC として入ってきています。その WETH、MATIC、ETH がその時点で日本円でいくらなのかがパッとわからないわけですよね。毎月の計上は別途やらないといけないので ChainChaser がないとまず不可能。",
+              "ウォレットにWETHやMATICで入ってきた売上が、売れた時点で日本円でいくらなのかがパッとわからない。これがChainChaserを使うと今日何が売れて合計いくらだった、今月何が売れて合計いくらだったというのがNFTコレクションごとに一目でわかる。売上計上作業はChainChaserがないと不可能です！",
           },
         ]}
       />
@@ -187,7 +201,7 @@ export default () => {
           {
             question: "カスタマイズはできますか？",
             answer:
-              "カスタマイズ内容によりますが可能です。詳細はお問い合わせください。",
+              "カスタマイズ内容によりますが可能です。お問い合せフォームからご相談ください。",
           },
         ]}
       />

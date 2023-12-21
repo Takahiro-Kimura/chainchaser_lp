@@ -54,11 +54,15 @@ export default ({ roundedHeaderButton }) => {
         <TwoColumn>
           <LeftColumn>
             <Heading>
-              ブロックチェーン上のデータを
-              <span tw="text-primary-500">楽々チェック</span>
+              <span style={{ wordBreak: "keep-all" }}>
+                NFTの売上を
+                <wbr />
+                <span tw="text-primary-500">楽々チェック</span>
+              </span>
             </Heading>
             <Paragraph>
-              ブロックチェーン上のデータを自動で収集して、日本円に換算し集計などを計算します。
+              自動で NFT コレクションごとの売上や Gas
+              代などを日本円に変換し集計します。ウォレットとコントラクトを登録するだけで簡単に利用開始できます。
             </Paragraph>
             {/* <Actions>
               <input type="text" placeholder="Your E-mail Address" />
